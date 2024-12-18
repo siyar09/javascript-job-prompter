@@ -83,7 +83,7 @@ console.log("De afdeling Sales heeft " + departments.sales.numberOfEmployees + "
 console.log("Marketing is een leuke afdeling om te werken. " + departments.marketing.description);
 
 // opdracht 1c
-console.log("De afdeling Customer Service heeft " + departments.customerService.numberOfEmployees + " medewerkers");
+console.log("De afdeling Customer Service heeft " + departments["customer-service"].numberOfEmployees + " medewerkers");
 
 // opdracht 1d
 console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager. " + departments.sales.jobs[1].description);
@@ -93,30 +93,39 @@ const userInput = prompt("Over welke afdeling wil je meer informatie? Kies uit: 
 console.log(userInput);
 
 // opdracht 2b/c
-if (userInput === "marketing") {
-    console.log("Je koos: " + userInput + "." + departments.marketing.description);
-} else if (userInput === "sales") {
-    console.log("Je koos: " + userInput + "." + departments.sales.description);
-} else if (userInput === "customer-service") {
-    console.log("Je koos: " + userInput + "." + departments["customer-service"].description);
-} else {
-    console.log("Ongeldige invoer. Probeer het opnieuw.");
-} 
+switch (userInput) {
+    case "marketing":
+        console.log("Je koos: " + userInput + "." + departments.marketing.description);
+        break;
+    case "sales":
+        console.log("Je koos: " + userInput + "." + departments.sales.description);
+        break;
+    case "customer-service":
+        console.log("Je koos: " + userInput + "." + departments["customer-service"].description);
+        break;
+    default:
+        console.log("Ongeldige invoer. Probeer het opnieuw.");
+}
 
 // opdracht 3a/b/c
 const keuze = prompt("Je koos: marketing" + " Over welke functie wil je meer informatie? Voer een getal tussen 0 en 3 in." + " 0: [" + departments.marketing.jobs[0].titel + "]," + " 1: [" + departments.marketing.jobs[1].titel + "]," + " 2: [" + departments.marketing.jobs[2].titel + "]," + " 3: [" + departments.marketing.jobs[3].titel + "]");
 console.log(keuze);
 
-if (keuze === "0") {
-    console.log("Je koos: " + departments.marketing.jobs[0].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[0].description);
-} else if (keuze === "1") {
-    console.log("Je koos: " + departments.marketing.jobs[1].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[1].description);
-} else if (keuze === "2") {
-    console.log("Je koos: " + departments.marketing.jobs[2].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[2].description);
-} else if (keuze === "3") {
-    console.log("Je koos: " + departments.marketing.jobs[3].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[3].description);
-} else { 
-    console.log("Ongeldige invoer. Probeer het opnieuw.");
+switch (keuze) {
+    case "0":
+        console.log("Je koos: " + departments.marketing.jobs[0].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[0].description);
+        break;
+    case "1":
+        console.log("Je koos: " + departments.marketing.jobs[1].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[1].description);
+        break;
+    case "2":
+        console.log("Je koos: " + departments.marketing.jobs[2].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[2].description);
+        break;
+    case "3":
+        console.log("Je koos: " + departments.marketing.jobs[3].titel + "." + " Een uitdagende rol! " + departments.marketing.jobs[3].description);
+        break;
+    default:
+        console.log("Ongeldige invoer. Probeer het opnieuw.");
 }
 
 // opdracht 4a
